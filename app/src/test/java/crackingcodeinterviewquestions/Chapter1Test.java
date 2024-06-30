@@ -19,6 +19,6 @@ class Chapter1Test {
     @Test
     void replaceSpaces() {
         assertEquals("Mr%20John%20Smith",
-            chapter1.replaceSpaces("Mr John Smith     ".toCharArray(), 13));
+                chapter1.replaceSpaces("Mr John Smith     ".toCharArray(), 13));
     }
 }

@@ -10,10 +10,10 @@ class Chapter2Test {
     void appendOneNodeToAnother() {
         var node = new Node(1);
         node.appendToTail(2);
-    
-        assertEquals(1,node.getData());
-        assertEquals(2,node.getNext().getData());
-        assertEquals(null,node.getNext().getNext());
+
+        assertEquals(1, node.getData());
+        assertEquals(2, node.getNext().getData());
+        assertEquals(null, node.getNext().getNext());
     }
 
     @Test
@@ -23,8 +23,8 @@ class Chapter2Test {
         node.getNext().appendToTail(4);
         node.deleteDups(node);
 
-        assertEquals(1,node.getData());
-        assertEquals(4,node.getNext().getData()); 
+        assertEquals(1, node.getData());
+        assertEquals(4, node.getNext().getData());
     }
 
 }

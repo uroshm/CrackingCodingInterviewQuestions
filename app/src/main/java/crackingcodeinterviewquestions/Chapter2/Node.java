@@ -5,11 +5,13 @@ import java.util.HashSet;
 public class Node {
 
     Node next = null;
+
     public Node getNext() {
         return next;
     }
 
     int data;
+
     public int getData() {
         return data;
     }
@@ -31,16 +33,16 @@ public class Node {
         var set = new HashSet<Integer>();
         Node previous = null;
 
-        while(n != null) {
-            if(set.contains(n.getData())) {
-                if(previous != null) {}
+        while (n != null) {
+            if (set.contains(n.getData())) {
+                if (previous != null) {
                     previous.next = n.next;
-            }
-            else {
+                }
+            } else {
                 set.add(n.getData());
                 previous = n;
             }
-            
+
             n = n.getNext();
         }
     }
