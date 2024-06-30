@@ -1,9 +1,6 @@
 package crackingcodeinterviewquestions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.HashSet;
-
 import org.junit.jupiter.api.Test;
 import crackingcodeinterviewquestions.Chapter2.Node;
 

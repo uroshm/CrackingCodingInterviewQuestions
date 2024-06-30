@@ -4,10 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Chapter1 {
-    public Chapter1() { /* TODO document why this constructor is empty */ }
+    public Chapter1() { /* Intentionally left empty. */ }
 
-    // 1.1 - Implement an algorithm to determine if a string has all unique
-    // characters. What if you cannot use additional data structures?
     boolean isStringUnique(String str) {
         int checker = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -19,16 +17,6 @@ public class Chapter1 {
             checker |= (1 << val);
         }
         return true;
-    }
-
-    // 1.3
-    boolean isAnagramOfOtherMethod1(String str1, String str2) {
-        if (str1.length() != str2.length()) {
-            return false;
-        }
-        var temp1 = sort(str1);
-        var temp2 = sort(str2);
-        return sort(str1).equals(sort(str2));
     }
 
     String sort(String str) {
