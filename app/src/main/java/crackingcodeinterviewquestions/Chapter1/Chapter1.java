@@ -1,28 +1,10 @@
 package crackingcodeinterviewquestions.Chapter1;
 
-import java.util.Arrays; // Add this line to import the Arrays class
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.Comparators;
-
-public class Chapter1Main {
-    public Chapter1Main() {
-        // 1.1:
-        String[] words = { "asdf", "asdasd", "aavda", "bafsdewtryhjrjt" };
-
-        for (var word : words) {
-            // System.out.println("1.1: isStringUnique " + word + ": " +
-            // isStringUnique(word));
-        }
-
-        // 1.3: We will assume case and space sensitive:
-        System.out.println("1.3: isAnagramOfAnother: " + isAnagramOfOtherMethod1("god", "dog")); // true
-        System.out.println("1.3: isAnagramOfAnother: " + isAnagramOfOtherMethod1("God", "dog")); // false
-
-        
-
-    }
+public class Chapter1 {
+    public Chapter1() { /* TODO document why this constructor is empty */ }
 
     // 1.1 - Implement an algorithm to determine if a string has all unique
     // characters. What if you cannot use additional data structures?
@@ -53,7 +35,34 @@ public class Chapter1Main {
         List<Character> charList = str.chars()
                 .mapToObj(c -> (char) c)
                 .toList();
-        return charList.stream().sorted().collect(Collectors.toList()).toString();       
+        return charList.stream().sorted().collect(Collectors.toList()).toString();
     }
 
+    public String replaceSpaces(char[] str, int length) {
+        
+        // remember to check for trailing or leading space since that isn't "part of" somehow...
+        
+        var numSpaces = 0;
+        for(int i = 0; i < length; i++) {
+            if(str[i]==' ') {
+                numSpaces++;
+            }
+        }
+
+        var newLength = length + numSpaces * 2;
+        for(int i = length - 1; i >= 0; i-- ) {
+            if(str[i]==' ') {
+                str[newLength -1] = '0';
+                str[newLength -2] = '2';
+                str[newLength -3] = '%';
+                newLength -= 3;
+            } else {
+                str[newLength - 1] = str[i];
+                newLength -= 1;
+            }
+        }
+        return String.valueOf(str).substring(0,str.length-1);
+    }
+
+    
 }
